@@ -8,11 +8,16 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.JoinColumn;
 
 import org.hibernate.annotations.UpdateTimestamp;
@@ -47,11 +52,12 @@ public class Comic {
     private String pageCount;
     // private List<TextObject> textObjects = new ArrayList<>();
 
-    @ManyToMany
-    @JoinTable(name = "comic_url", joinColumns = @JoinColumn(name = "url_id"), 
-        inverseJoinColumns = @JoinColumn(name = "comic_id"))
-    private Set<Url> urls = new HashSet<>();
+    // @ManyToMany
+    // @JoinTable(name = "comic_url", joinColumns = @JoinColumn(name = "url_id"), 
+    //     inverseJoinColumns = @JoinColumn(name = "comic_id"))
+    // private Set<Url> urls = new HashSet<>();
 
-    @ManyToMany(mappedBy = "comics", cascade = CascadeType.ALL)
-    private List<Character> character;
+    
+    @ManyToMany(mappedBy = "comics", fetch = FetchType.EAGER)
+    private List<Character> characters;
 }
