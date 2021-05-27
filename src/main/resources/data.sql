@@ -1,4 +1,3 @@
--- Charactes
 
 INSERT INTO CHARACTER (ID, NAME, DESCRIPTION, MODIFIED, EXTENSION, PATH) VALUES (1, 'Capitão América', 'O segundo melhor', CURRENT_TIMESTAMP(), 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg');
 INSERT INTO CHARACTER (ID, NAME, DESCRIPTION, MODIFIED, EXTENSION, PATH) VALUES (2, 'Homem de Ferro', 'O melhor',CURRENT_TIMESTAMP(), 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg');
@@ -7,7 +6,6 @@ INSERT INTO CHARACTER (ID, NAME, DESCRIPTION, MODIFIED, EXTENSION, PATH) VALUES 
 INSERT INTO CHARACTER (ID, NAME, DESCRIPTION, MODIFIED, EXTENSION, PATH) VALUES (5, 'Viúva Negra', 'Ainda vai aparecer muito', CURRENT_TIMESTAMP(), 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg');
 INSERT INTO CHARACTER (ID, NAME, DESCRIPTION, MODIFIED, EXTENSION, PATH) VALUES (6, 'Gavião Arqueiro', 'Ajudou, mas nem tanto', CURRENT_TIMESTAMP(), 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg');
 
--- Comics
 
 INSERT INTO COMIC (ID, TITLE, DESCRIPTION, NUMBER, DIGITAL_ID, MODIFIED, VARIANT_DESCRIPTION,  CHARACTER_ID) VALUES (1, 'Capitão América-1l', 's simply dummy text of the printing and typesetting', 1, 0, CURRENT_TIMESTAMP(), 'Bitten by a radioactive spider', 1);
 INSERT INTO COMIC (ID, TITLE, DESCRIPTION, NUMBER, DIGITAL_ID, MODIFIED, VARIANT_DESCRIPTION,  CHARACTER_ID) VALUES (2, 'Capitão América-2', 's simply dummy text of the printing and typesetting', 1, 0, CURRENT_TIMESTAMP(), 'Bitten by a radioactive spider', 1);
@@ -25,3 +23,30 @@ INSERT INTO COMIC (ID, TITLE, DESCRIPTION, NUMBER, DIGITAL_ID, MODIFIED, VARIANT
 INSERT INTO COMIC (ID, TITLE, DESCRIPTION, NUMBER, DIGITAL_ID, MODIFIED, VARIANT_DESCRIPTION,  CHARACTER_ID) VALUES (12, 'Thor: 2', 's simply dummy text of the printing and typesetting',0, 2,  CURRENT_TIMESTAMP(), 'Bitten by a radioactive spider', 4);
 INSERT INTO COMIC (ID, TITLE, DESCRIPTION, NUMBER, DIGITAL_ID, MODIFIED, VARIANT_DESCRIPTION,  CHARACTER_ID) VALUES (10, 'Thor - 3', 's simply dummy text of the printing and typesetting',0, 4,  CURRENT_TIMESTAMP(), 'Bitten by a radioactive spider', 4);
 
+
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (1,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 1);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (2,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 1);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (3,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 2);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (4,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 2);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (5,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 3);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (6,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 3);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (7,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 4);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (8,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 4);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (9,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 5);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (10,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 5);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (11,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 6);
+INSERT INTO EVENT (ID, DESCRIPTION, MODIFIED, START_DATE, END_DATE, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (12,'when an unknown printer took a galley',CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()-10, CURRENT_TIMESTAMP()+50, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 6);
+
+
+
+INSERT INTO SERIE (ID, DESCRIPTION, MODIFIED, START_YEAR, END_YEAR, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (1,' Letraset sheets containing Lorem',CURRENT_TIMESTAMP(), 2000, 2021, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 1);
+INSERT INTO SERIE (ID, DESCRIPTION, MODIFIED, START_YEAR, END_YEAR, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (2,' Letraset sheets containing Lorem',CURRENT_TIMESTAMP(), 2000, 2021, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 1);
+INSERT INTO SERIE (ID, DESCRIPTION, MODIFIED, START_YEAR, END_YEAR, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (3,' Letraset sheets containing Lorem',CURRENT_TIMESTAMP(), 2000, 2021, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 2);
+INSERT INTO SERIE (ID, DESCRIPTION, MODIFIED, START_YEAR, END_YEAR, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (4,' Letraset sheets containing Lorem',CURRENT_TIMESTAMP(), 2000, 2021, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 4);
+INSERT INTO SERIE (ID, DESCRIPTION, MODIFIED, START_YEAR, END_YEAR, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (5,' Letraset sheets containing Lorem',CURRENT_TIMESTAMP(), 2000, 2021, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 4);
+INSERT INTO SERIE (ID, DESCRIPTION, MODIFIED, START_YEAR, END_YEAR, PATH, EXTENSION, TITLE, CHARACTER_ID) VALUES (6,' Letraset sheets containing Lorem',CURRENT_TIMESTAMP(), 2000, 2021, 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'jpg', 'Why do we use it?', 4);
+
+INSERT INTO STORY (ID, DESCRIPTION,MODIFIED, EXTENSION, PATH, TITLE, CHARACTER_ID) VALUES (1,'The Extremes of Good and Evil',CURRENT_TIMESTAMP(),'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'png', 'Bla asgda asdahjksd', 1);
+INSERT INTO STORY (ID, DESCRIPTION,MODIFIED, EXTENSION, PATH, TITLE, CHARACTER_ID) VALUES (2,'The Extremes of Good and Evil',CURRENT_TIMESTAMP(),'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'png', 'Bla asgda asdahjksd', 1);
+INSERT INTO STORY (ID, DESCRIPTION,MODIFIED, EXTENSION, PATH, TITLE, CHARACTER_ID) VALUES (3,'The Extremes of Good and Evil',CURRENT_TIMESTAMP(),'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'png', 'Bla asgda asdahjksd', 2);
+INSERT INTO STORY (ID, DESCRIPTION,MODIFIED, EXTENSION, PATH, TITLE, CHARACTER_ID) VALUES (4,'The Extremes of Good and Evil',CURRENT_TIMESTAMP(),'http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b', 'png', 'Bla asgda asdahjksd', 4);

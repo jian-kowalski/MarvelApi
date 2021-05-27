@@ -25,9 +25,6 @@ public class Story {
     private String description;
     private String type;
 
-    @UpdateTimestamp
-    private OffsetDateTime modified;
-
     @Embedded
     private Thumbnail thumbnail;
 
