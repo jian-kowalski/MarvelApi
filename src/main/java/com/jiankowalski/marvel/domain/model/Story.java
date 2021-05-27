@@ -1,17 +1,15 @@
 package com.jiankowalski.marvel.domain.model;
 
 import java.time.OffsetDateTime;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,7 +23,6 @@ public class Story {
     private Long Id;
     private String title;
     private String description;
-    private String resourceURI;
     private String type;
 
     @UpdateTimestamp
@@ -34,6 +31,6 @@ public class Story {
     @Embedded
     private Thumbnail thumbnail;
 
-    @ManyToMany(mappedBy = "comics", cascade = CascadeType.ALL)
-    private Set<Character> character;
+    @ManyToOne
+    private Character character;
 }

@@ -18,9 +18,7 @@ public class ComicModelAssembler {
     }
 
     public List<ComicModel> toCollectionModel(List<Comic> comics) {
-        return comics.stream()
-                .map(this::toModel)
-                .collect(Collectors.toList());
+        return comics.stream().map(this::toModel).collect(Collectors.toList());
     }
-    
+
 }

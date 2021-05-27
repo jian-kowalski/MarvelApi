@@ -1,33 +1,23 @@
 package com.jiankowalski.marvel.api.model;
 
 import java.time.OffsetDateTime;
+import java.util.List;
+
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
 import lombok.Getter;
 import lombok.Setter;
-
-@Getter
+@Relation(collectionRelation = "characters")
 @Setter
-public class CharacterModel {
+@Getter
+public class CharacterModel extends RepresentationModel<CharacterModel> {
 
     private Long id;
     private String name;
     private String description;
     private OffsetDateTime modified;
-    private String resourceURI;
-    private String path;
-    private String extension;
-
- 
-    // private List<Comic> comics;
-
-
-    // private Set<Story> stories;
-
-
-    // private Set<Event> events;
-
-    // private Set<Serie> series;
-
-    // private Set<Url> urls;
+    private ThumbnailModel thumbnail;
+    private List<ComicModelSummary> comics;
     
 }

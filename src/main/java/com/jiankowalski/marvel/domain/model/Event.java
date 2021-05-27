@@ -1,21 +1,16 @@
 package com.jiankowalski.marvel.domain.model;
 
 import java.time.OffsetDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -35,17 +30,16 @@ public class Event {
 
     @UpdateTimestamp
     private OffsetDateTime modified;
-    private OffsetDateTime start;
-    private OffsetDateTime end;
+    
+    @Column(name="start_date")
+    private OffsetDateTime startDate;
+
+    @Column(name="end_date")
+    private OffsetDateTime endDate;
 
     @Embedded
     private Thumbnail thumbnail;
 
-    @ManyToMany
-    @JoinTable(name = "events_urls", joinColumns = @JoinColumn(name = "urls_id"), 
-        inverseJoinColumns = @JoinColumn(name = "event_id"))
-    private Set<Url> urls = new HashSet<>();
-
-    @ManyToMany(mappedBy = "comics", cascade = CascadeType.ALL)
-    private Set<Character> character;
+    @ManyToOne
+	private Character character;
 }

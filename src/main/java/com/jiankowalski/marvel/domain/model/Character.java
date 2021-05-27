@@ -1,19 +1,21 @@
 package com.jiankowalski.marvel.domain.model;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
@@ -32,38 +34,25 @@ public class Character {
 
     @UpdateTimestamp
     private OffsetDateTime modified;
-    private String resourceURI;
 
     @Embedded
     private Thumbnail thumbnail;
-    
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "character_comic", joinColumns =
-    @JoinColumn(name = "comic_id"),
-        inverseJoinColumns = @JoinColumn(name = "character_id"))
-    private List<Comic> comics;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "character_story", joinColumns =
-    @JoinColumn(name = "story_id"),
-        inverseJoinColumns = @JoinColumn(name = "character_id"))
-    private List<Story> stories;
+    @OneToMany(mappedBy = "character")
+    private List<Comic> comics = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "character_event", joinColumns =
-    @JoinColumn(name = "event_id"),
-        inverseJoinColumns = @JoinColumn(name = "character_id"))
-    private List<Event> events;
+    // @OneToMany(fetch = FetchType.LAZY, mappedBy = "character", 
+    //     orphanRemoval = true, cascade = CascadeType.MERGE)
+    // @Fetch(FetchMode.SUBSELECT)
+    // private List<Event> events = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "character_serie", joinColumns =
-    @JoinColumn(name = "serie_id"),
-        inverseJoinColumns = @JoinColumn(name = "character_id"))
-    private List<Serie> series;
+    // @OneToMany(fetch = FetchType.LAZY, mappedBy = "character", 
+    //     orphanRemoval = true, cascade = CascadeType.MERGE)
+    // @Fetch(FetchMode.SUBSELECT)
+    // private List<Serie> series = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "character_url", joinColumns =
-    @JoinColumn(name = "urls_id"),
-        inverseJoinColumns = @JoinColumn(name = "character_id"))
-    private List<Url> urls;
+    // @OneToMany(fetch = FetchType.LAZY, mappedBy = "character", 
+    //     orphanRemoval = true, cascade = CascadeType.MERGE)
+    // @Fetch(FetchMode.SUBSELECT)
+    // private List<Story> stories = new ArrayList<>();
 }
