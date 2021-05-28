@@ -2,7 +2,9 @@ package com.jiankowalski.marvel.api.controller;
 
 import com.jiankowalski.marvel.api.assembler.CharacterModelAssembler;
 import com.jiankowalski.marvel.api.model.CharacterModel;
+import com.jiankowalski.marvel.domain.repository.filter.CharacterFilter;
 import com.jiankowalski.marvel.domain.service.CharacterService;
+import com.jiankowalski.marvel.infrastructure.repository.spec.CharacterSpecs;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +26,8 @@ public class CharacterController {
     }
 
     @GetMapping
-    public CollectionModel<CharacterModel> getAll() {
-        return comicModelAssembler.toCollectionModel(characterService.findAll());
+    public CollectionModel<CharacterModel> find(CharacterFilter filter) {
+        return comicModelAssembler.toCollectionModel(characterService.findAll(CharacterSpecs.filter(filter)));
     }
 
     @GetMapping("/{characterId}")

@@ -5,6 +5,7 @@ import com.jiankowalski.marvel.domain.exception.CharacterNotFoundException;
 import com.jiankowalski.marvel.domain.model.Character;
 import com.jiankowalski.marvel.domain.repository.CharacterRepository;
 
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,8 +18,8 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     @Override
-    public List<Character> findAll() {
-        return characterRepository.findAll();
+    public List<Character> findAll(Specification<Character> filter) {
+        return characterRepository.findAll(filter);
     }
 
     @Override
