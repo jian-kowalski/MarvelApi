@@ -5,9 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ComicModelSummary {
-
-    private Long id;
+public class SerieModelSummary {
+    private Long Id;
     private String title;
-    
+    private ThumbnailModel thumbnail;
 }

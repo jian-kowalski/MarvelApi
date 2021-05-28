@@ -24,12 +24,12 @@ public class CharacterController {
     }
 
     @GetMapping
-    public CollectionModel<CharacterModel> listar() {
+    public CollectionModel<CharacterModel> getAll() {
         return comicModelAssembler.toCollectionModel(characterService.findAll());
     }
 
     @GetMapping("/{characterId}")
-    public CharacterModel find(@PathVariable Long characterId) {
+    public CharacterModel getCharacterById(@PathVariable Long characterId) {
         return comicModelAssembler.toModel(characterService.findById(characterId));
     }
 

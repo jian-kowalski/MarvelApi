@@ -1,15 +1,11 @@
 package com.jiankowalski.marvel.domain.model;
 
-import java.time.OffsetDateTime;
-
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

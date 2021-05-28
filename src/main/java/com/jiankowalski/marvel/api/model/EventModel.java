@@ -7,11 +7,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ComicModel extends ComicModelSummary {
-    private Integer digitalId;
-    private Integer issueNumber;
-    private String variantDescription;
+public class EventModel extends EventModelSummary {
     private String description;
     private OffsetDateTime modified;
-    private Integer number;
+    private OffsetDateTime startDate;
+    private OffsetDateTime endDate; 
 }

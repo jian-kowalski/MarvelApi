@@ -5,9 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UrlModel {
-
-    private String url;
+public class StoryModel extends StoryModelSummary{
+    private String description;
     private String type;
-    
 }

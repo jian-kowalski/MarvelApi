@@ -7,11 +7,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ComicModel extends ComicModelSummary {
-    private Integer digitalId;
-    private Integer issueNumber;
-    private String variantDescription;
+public class SerieModel extends SerieModelSummary {
     private String description;
+    private Integer startYear;
+    private Integer endYear;
+    private String rating;
     private OffsetDateTime modified;
-    private Integer number;
 }

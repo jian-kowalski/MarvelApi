@@ -2,6 +2,9 @@ package com.jiankowalski.marvel.api.assembler;
 
 import com.jiankowalski.marvel.api.controller.CharacterComicController;
 import com.jiankowalski.marvel.api.controller.CharacterController;
+import com.jiankowalski.marvel.api.controller.CharacterEventController;
+import com.jiankowalski.marvel.api.controller.CharacterSerieController;
+import com.jiankowalski.marvel.api.controller.CharacterStoryController;
 import com.jiankowalski.marvel.api.model.CharacterModel;
 import com.jiankowalski.marvel.domain.model.Character;
 
@@ -27,14 +30,7 @@ public class CharacterModelAssembler extends RepresentationModelAssemblerSupport
 
         modelMapper.map(character, characterModel);
 
-        characterModel.add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(CharacterController.class).listar())
-                .withRel("characters"));
-
-        characterModel.getComics().forEach(comic -> {
-            comic.add(WebMvcLinkBuilder
-                    .linkTo(WebMvcLinkBuilder.methodOn(CharacterComicController.class).find(comic.getId()))
-                    .withSelfRel());
-        });
+        addLinkToRel(characterModel);
 
         return characterModel;
     }
@@ -43,4 +39,50 @@ public class CharacterModelAssembler extends RepresentationModelAssemblerSupport
     public CollectionModel<CharacterModel> toCollectionModel(Iterable<? extends Character> entities) {
         return super.toCollectionModel(entities).add(WebMvcLinkBuilder.linkTo(CharacterController.class).withSelfRel());
     }
+
+    private void addLinkToRel(CharacterModel characterModel) {
+        addLinkToCharactersAll(characterModel);
+
+        addlinkToComics(characterModel);
+
+        addLinkToEvents(characterModel);
+
+        addlinkToStorys(characterModel);
+
+        addlinkToSeries(characterModel);
+    }
+
+    private void addLinkToEvents(CharacterModel characterModel) {
+        if (!characterModel.getEvents().isEmpty()) {
+            characterModel.add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(CharacterEventController.class)
+                    .getEventsByCharacter(characterModel.getId())).withRel("events"));
+        }
+    }
+
+    private void addlinkToComics(CharacterModel characterModel) {
+        if (!characterModel.getComics().isEmpty()) {
+            characterModel.add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(CharacterComicController.class)
+                    .getComicsByCharacter(characterModel.getId())).withRel("comics"));
+        }
+    }
+
+    private void addlinkToStorys(CharacterModel characterModel) {
+        if (!characterModel.getStorys().isEmpty()) {
+            characterModel.add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(CharacterStoryController.class)
+                    .getStorysByCharacter(characterModel.getId())).withRel("storys"));
+        }
+    }
+
+    private void addlinkToSeries(CharacterModel characterModel) {
+        if (!characterModel.getSeries().isEmpty()) {
+            characterModel.add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(CharacterSerieController.class)
+                    .getSeriesByCharacter(characterModel.getId())).withRel("series"));
+        }
+    }
+
+    private CharacterModel addLinkToCharactersAll(CharacterModel characterModel) {
+        return characterModel.add(WebMvcLinkBuilder
+                .linkTo(WebMvcLinkBuilder.methodOn(CharacterController.class).getAll()).withRel("characters"));
+    }
+
 }

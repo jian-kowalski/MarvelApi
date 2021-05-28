@@ -37,18 +37,12 @@ public class Character {
     @OneToMany(mappedBy = "character")
     private List<Comic> comics = new ArrayList<>();
 
-    // @OneToMany(fetch = FetchType.LAZY, mappedBy = "character", 
-    //     orphanRemoval = true, cascade = CascadeType.MERGE)
-    // @Fetch(FetchMode.SUBSELECT)
-    // private List<Event> events = new ArrayList<>();
+    @OneToMany(mappedBy = "character")
+    private List<Event> events = new ArrayList<>();
 
-    // @OneToMany(fetch = FetchType.LAZY, mappedBy = "character", 
-    //     orphanRemoval = true, cascade = CascadeType.MERGE)
-    // @Fetch(FetchMode.SUBSELECT)
-    // private List<Serie> series = new ArrayList<>();
+    @OneToMany(mappedBy = "character")
+    private List<Serie> series = new ArrayList<>();
 
-    // @OneToMany(fetch = FetchType.LAZY, mappedBy = "character", 
-    //     orphanRemoval = true, cascade = CascadeType.MERGE)
-    // @Fetch(FetchMode.SUBSELECT)
-    // private List<Story> stories = new ArrayList<>();
+    @OneToMany(mappedBy = "character")
+    private List<Story> storys = new ArrayList<>();
 }

@@ -29,7 +29,7 @@ public class CharacterComicController {
     }
 
     @GetMapping
-    public List<ComicModel> find(@PathVariable Long characterId) {
+    public List<ComicModel> getComicsByCharacter(@PathVariable Long characterId) {
         Character character = characterService.findById(characterId);
         return comicModelAssembler.toCollectionModel(comicService.findByCharacter(character));
 
