@@ -1,9 +1,10 @@
-package com.jiankowalski.marvel.api.controller;
+package com.jiankowalski.marvel.api.v1.controller;
 
 import java.util.List;
 
-import com.jiankowalski.marvel.api.assembler.EventModelAssembler;
-import com.jiankowalski.marvel.api.model.EventModel;
+import com.jiankowalski.marvel.api.v1.assembler.EventModelAssembler;
+import com.jiankowalski.marvel.api.v1.model.EventModel;
+import com.jiankowalski.marvel.api.v1.openapi.controller.CharacterEventControllerOpenapi;
 import com.jiankowalski.marvel.domain.service.CharacterService;
 import com.jiankowalski.marvel.domain.service.EventService;
 
@@ -14,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/characters/{characterId}/events")
-
-public class CharacterEventController {
+public class CharacterEventController implements CharacterEventControllerOpenapi {
 
     private final CharacterService characterService;
     private final EventService eventService;

@@ -1,7 +1,8 @@
-package com.jiankowalski.marvel.api.controller;
+package com.jiankowalski.marvel.api.v1.controller;
 
-import com.jiankowalski.marvel.api.assembler.CharacterModelAssembler;
-import com.jiankowalski.marvel.api.model.CharacterModel;
+import com.jiankowalski.marvel.api.v1.assembler.CharacterModelAssembler;
+import com.jiankowalski.marvel.api.v1.model.CharacterModel;
+import com.jiankowalski.marvel.api.v1.openapi.controller.CharacterControllerOpenapi;
 import com.jiankowalski.marvel.core.data.PageWrapper;
 import com.jiankowalski.marvel.domain.model.Character;
 import com.jiankowalski.marvel.domain.repository.filter.CharacterFilter;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/characters")
-public class CharacterController {
+public class CharacterController implements CharacterControllerOpenapi {
 
     private final CharacterService characterService;
 

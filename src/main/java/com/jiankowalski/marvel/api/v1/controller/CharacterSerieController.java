@@ -1,9 +1,10 @@
-package com.jiankowalski.marvel.api.controller;
+package com.jiankowalski.marvel.api.v1.controller;
 
 import java.util.List;
 
-import com.jiankowalski.marvel.api.assembler.SerieModelAssembler;
-import com.jiankowalski.marvel.api.model.SerieModel;
+import com.jiankowalski.marvel.api.v1.assembler.SerieModelAssembler;
+import com.jiankowalski.marvel.api.v1.model.SerieModel;
+import com.jiankowalski.marvel.api.v1.openapi.controller.CharacterSerieControllerOpenapi;
 import com.jiankowalski.marvel.domain.service.CharacterService;
 import com.jiankowalski.marvel.domain.service.SerieService;
 
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/characters/{characterId}/series")
-public class CharacterSerieController {
+public class CharacterSerieController implements CharacterSerieControllerOpenapi {
 
     private final CharacterService characterService;
     private final SerieService serieService;

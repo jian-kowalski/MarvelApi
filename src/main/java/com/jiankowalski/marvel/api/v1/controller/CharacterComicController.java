@@ -1,9 +1,10 @@
-package com.jiankowalski.marvel.api.controller;
+package com.jiankowalski.marvel.api.v1.controller;
 
 import java.util.List;
 
-import com.jiankowalski.marvel.api.assembler.ComicModelAssembler;
-import com.jiankowalski.marvel.api.model.ComicModel;
+import com.jiankowalski.marvel.api.v1.assembler.ComicModelAssembler;
+import com.jiankowalski.marvel.api.v1.model.ComicModel;
+import com.jiankowalski.marvel.api.v1.openapi.controller.CharacterComicControllerOpenapi;
 import com.jiankowalski.marvel.domain.model.Character;
 import com.jiankowalski.marvel.domain.service.CharacterService;
 import com.jiankowalski.marvel.domain.service.ComicService;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/characters/{characterId}/comics")
-public class CharacterComicController {
+public class CharacterComicController implements CharacterComicControllerOpenapi {
 
     private final CharacterService characterService;
     private final ComicService comicService;

@@ -1,11 +1,11 @@
-package com.jiankowalski.marvel.api.assembler;
+package com.jiankowalski.marvel.api.v1.assembler;
 
-import com.jiankowalski.marvel.api.controller.CharacterComicController;
-import com.jiankowalski.marvel.api.controller.CharacterController;
-import com.jiankowalski.marvel.api.controller.CharacterEventController;
-import com.jiankowalski.marvel.api.controller.CharacterSerieController;
-import com.jiankowalski.marvel.api.controller.CharacterStoryController;
-import com.jiankowalski.marvel.api.model.CharacterModel;
+import com.jiankowalski.marvel.api.v1.controller.CharacterComicController;
+import com.jiankowalski.marvel.api.v1.controller.CharacterController;
+import com.jiankowalski.marvel.api.v1.controller.CharacterEventController;
+import com.jiankowalski.marvel.api.v1.controller.CharacterSerieController;
+import com.jiankowalski.marvel.api.v1.controller.CharacterStoryController;
+import com.jiankowalski.marvel.api.v1.model.CharacterModel;
 import com.jiankowalski.marvel.domain.model.Character;
 
 import org.modelmapper.ModelMapper;
@@ -69,7 +69,7 @@ public class CharacterModelAssembler extends RepresentationModelAssemblerSupport
     private void addlinkToStorys(CharacterModel characterModel) {
         if (!characterModel.getStorys().isEmpty()) {
             characterModel.add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(CharacterStoryController.class)
-                    .getStorysByCharacter(characterModel.getId())).withRel("storys"));
+                    .getStoriesByCharacter(characterModel.getId())).withRel("storys"));
         }
     }
 

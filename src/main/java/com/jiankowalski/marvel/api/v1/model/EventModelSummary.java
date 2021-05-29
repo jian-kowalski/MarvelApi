@@ -1,4 +1,4 @@
-package com.jiankowalski.marvel.api.model;
+package com.jiankowalski.marvel.api.v1.model;
 
 import lombok.Getter;
 import lombok.Setter;

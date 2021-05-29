@@ -1,9 +1,9 @@
-package com.jiankowalski.marvel.api.assembler;
+package com.jiankowalski.marvel.api.v1.assembler;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.jiankowalski.marvel.api.model.SerieModel;
+import com.jiankowalski.marvel.api.v1.model.SerieModel;
 import com.jiankowalski.marvel.domain.model.Serie;
 
 import org.modelmapper.ModelMapper;
