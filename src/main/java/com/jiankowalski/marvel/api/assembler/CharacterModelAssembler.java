@@ -82,7 +82,7 @@ public class CharacterModelAssembler extends RepresentationModelAssemblerSupport
 
     private CharacterModel addLinkToCharactersAll(CharacterModel characterModel) {
         return characterModel.add(WebMvcLinkBuilder
-                .linkTo(WebMvcLinkBuilder.methodOn(CharacterController.class).find(null)).withRel("characters"));
+                .linkTo(WebMvcLinkBuilder.methodOn(CharacterController.class).find(null, null)).withRel("characters"));
     }
 
 }

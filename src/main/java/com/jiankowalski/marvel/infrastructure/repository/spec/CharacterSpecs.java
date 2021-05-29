@@ -28,6 +28,7 @@ public class CharacterSpecs {
             if (characterFilter.getModified() != null) {
                 predicates.add(builder.greaterThanOrEqualTo(root.get("modified"), characterFilter.getModified()));
             }
+
             return builder.and(predicates.toArray(new Predicate[0]));
         };
     }

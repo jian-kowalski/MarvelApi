@@ -1,10 +1,11 @@
 package com.jiankowalski.marvel.domain.service;
-import java.util.List;
 
 import com.jiankowalski.marvel.domain.exception.CharacterNotFoundException;
 import com.jiankowalski.marvel.domain.model.Character;
 import com.jiankowalski.marvel.domain.repository.CharacterRepository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -18,15 +19,14 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     @Override
-    public List<Character> findAll(Specification<Character> filter) {
-        return characterRepository.findAll(filter);
+    public Character findById(Long Id) {
+        return characterRepository.findById(Id)
+            .orElseThrow(() -> new CharacterNotFoundException(Id));
     }
 
     @Override
-    public Character findById( Long Id ) {
-        return characterRepository.findById(Id)
-            .orElseThrow(()-> new CharacterNotFoundException(Id));
+    public Page<Character> findAll(Specification<Character> spec, Pageable pageable) {
+        return characterRepository.findAll(spec, pageable);
     }
-        
-    
+
 }
