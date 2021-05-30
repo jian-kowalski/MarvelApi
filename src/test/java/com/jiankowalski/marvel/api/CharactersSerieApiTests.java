@@ -1,4 +1,4 @@
-package com.jiankowalski.marvel;
+package com.jiankowalski.marvel.api;
 
 
 import org.junit.jupiter.api.BeforeEach;

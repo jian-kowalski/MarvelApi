@@ -20,6 +20,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Data
 public class Character {
+
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

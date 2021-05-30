@@ -1,4 +1,4 @@
-package com.jiankowalski.marvel;
+package com.jiankowalski.marvel.api;
 
 
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +12,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class CharactersEventApiTests {
+public class CharactersComicApiTests {
 
 	private static final Integer ID_CHARACTER_EXISTING = 1;
 	private static final Integer ID_CHARACTER_NONEXISTENT = 100;
@@ -24,11 +24,11 @@ public class CharactersEventApiTests {
 	void setUp() {
 		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 		RestAssured.port = port;
-		RestAssured.basePath = "/v1/public/characters/{characterId}/events";
+		RestAssured.basePath = "/v1/public/characters/{characterId}/comics";
 	}
 
 	@Test
-    public void deveRetornarStatus200_QuandoConsultaEventCharactersExistente() {
+    public void deveRetornarStatus200_QuandoConsultaComicCharactersExistente() {
         RestAssured.given()
 				.pathParam("characterId", ID_CHARACTER_EXISTING)
                 .accept(ContentType.JSON)
@@ -39,7 +39,7 @@ public class CharactersEventApiTests {
     }
 
 	@Test
-    public void deveRetornarStatus404_QuandoConsultaEventCharactersInexistente() {
+    public void deveRetornarStatus404_QuandoConsultaComicCharactersInexistente() {
         RestAssured.given()
 				.pathParam("characterId", ID_CHARACTER_NONEXISTENT)
                 .accept(ContentType.JSON)

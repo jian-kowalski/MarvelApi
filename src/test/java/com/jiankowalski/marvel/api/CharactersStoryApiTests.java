@@ -1,4 +1,4 @@
-package com.jiankowalski.marvel;
+package com.jiankowalski.marvel.api;
 
 
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +12,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class CharactersComicApiTests {
+public class CharactersStoryApiTests {
 
 	private static final Integer ID_CHARACTER_EXISTING = 1;
 	private static final Integer ID_CHARACTER_NONEXISTENT = 100;
@@ -24,11 +24,11 @@ public class CharactersComicApiTests {
 	void setUp() {
 		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 		RestAssured.port = port;
-		RestAssured.basePath = "/v1/public/characters/{characterId}/comics";
+		RestAssured.basePath = "/v1/public/characters/{characterId}/stories";
 	}
 
 	@Test
-    public void deveRetornarStatus200_QuandoConsultaComicCharactersExistente() {
+    public void deveRetornarStatus200_QuandoConsultaStoryCharactersExistente() {
         RestAssured.given()
 				.pathParam("characterId", ID_CHARACTER_EXISTING)
                 .accept(ContentType.JSON)
@@ -39,7 +39,7 @@ public class CharactersComicApiTests {
     }
 
 	@Test
-    public void deveRetornarStatus404_QuandoConsultaComicCharactersInexistente() {
+    public void deveRetornarStatus404_QuandoConsultaStoryCharactersInexistente() {
         RestAssured.given()
 				.pathParam("characterId", ID_CHARACTER_NONEXISTENT)
                 .accept(ContentType.JSON)
@@ -50,7 +50,7 @@ public class CharactersComicApiTests {
     }
 
 	@Test
-    public void testarComicNaoNulos() {
+    public void testarStoryNaoNulos() {
         RestAssured.given()
 				.pathParam("characterId", ID_CHARACTER_EXISTING)
                 .accept(ContentType.JSON)

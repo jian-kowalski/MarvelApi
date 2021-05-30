@@ -1,4 +1,4 @@
-package com.jiankowalski.marvel;
+package com.jiankowalski.marvel.api;
 
 
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +16,10 @@ public class CharactersApiTests {
 	private static final String ID_CHARACTER_EXISTING = "/1";
 	private static final String ID_CHARACTER_NONEXISTENT = "/100";
 	private static final String CAPITAO_DO_CODIGO = "Capitão do cód";
-	private static final String ORDENACAO_POR_NOME = "name";
+	private static final String NUM_PAGE = "1";
+	private static final String NUM_SIZE = "1";
+	private static final String ORDENACAO_POR_NOME = "name,desc";
+	private static final String ORDENACAO_POR_ID = "id,desc";
 	private static final Integer ID_FILTER_CHARACTER = 2;
 	
 
@@ -93,6 +96,21 @@ public class CharactersApiTests {
 		RestAssured
 			.given()
 			.param("order",  ORDENACAO_POR_NOME)
+			.accept(ContentType.JSON)
+			.when()
+			.get() 
+			.then()
+			.statusCode(HttpStatus.OK.value());
+	}
+	@Test
+	public void deveRetornarStatus200_ComParamentrosDePaginacao() {
+
+		RestAssured
+			.given()
+			.param("page", NUM_PAGE)
+			.param("size", NUM_SIZE)
+			.param("sort", ORDENACAO_POR_ID) 
+			.param("sort", ORDENACAO_POR_NOME) 
 			.accept(ContentType.JSON)
 			.when()
 			.get() 
