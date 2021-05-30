@@ -1,6 +1,6 @@
 # MarvelApi
 
-Esse projeto é uma releitura dos endpoints de characters a [API da Marvel](https://developer.marvel.com/docs#!/public).
+Esse projeto é uma releitura dos endpoints de characters da [API da Marvel](https://developer.marvel.com/docs#!/public).
 
 ## Começando
 
@@ -17,29 +17,37 @@ Para executar o projeto, será necessário instalar os seguintes programas:
 Para iniciar, é necessário clonar o projeto do GitHub num diretório de sua preferência:
 
 ```shell
-cd "diretorio de sua preferencia"
+cd "diretório de sua preferencia"
 git clone https://github.com/jian-kowalski/MarvelApi.git
 ```
 
 ### Construção
 
-Para construir o projeto com o Maven, no diretorio raiz executar os comando abaixo:
+Para construir o projeto com o Maven, no diretório raiz executar os comando abaixo:
 
 ```shell
 .\mvnw clean install
 ```
 
+### Testes
+
+Para executar os testes do projeto com o Maven, no diretório raiz executar os comando abaixo:
+
+```shell
+.\mvnw test
+```
+
 ### Execução
 
-Para executar o projeto com o Maven, no diretorio raiz executar os comando abaixo:
+Para executar o projeto com o Maven, no diretório raiz executar os comando abaixo:
 
 ```shell
 java -jar target/marvel-0.0.1-SNAPSHOT.jar
 ```
-Obs: O projeto roda na port 8080, certifique-se que a mesma esta disponivel.
+Obs: O projeto roda na port 8080, certifique-se que a mesma esta disponível.
 ### Documentação
 
-Para ter acesso a ducumentaçao da API, após a execução do projeto acessar:
+Para ter acesso a ducumentação da API, após a execução do projeto acessar:
 
 - [Documentação](http://localhost:8080/v1/public/swagger-ui.html)
 
