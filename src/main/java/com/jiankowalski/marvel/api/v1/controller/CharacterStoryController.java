@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/characters/{characterId}/stories", produces = "application/json;charset=UTF-8")
+@RequestMapping(value = "/characters/{characterId}/stories")
 public class CharacterStoryController implements CharacterStoryControllerOpenapi {
 
     private final CharacterService characterService;

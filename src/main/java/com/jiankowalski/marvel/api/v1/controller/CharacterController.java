@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/characters", produces = "application/json;charset=UTF-8")
+@RequestMapping(value = "/characters")
 public class CharacterController implements CharacterControllerOpenapi {
 
     private final CharacterService characterService;
